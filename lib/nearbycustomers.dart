@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' show SystemChrome, SystemUiOverlayStyle, rootBundle;
 import 'package:taxidriverapp/driver_on_the_way_screen.dart';
 
 import 'colors.dart';
@@ -25,22 +25,22 @@ class NearByCustomersState extends State<NearByCustomers> {
         circleId: CircleId(circleIdMain3),
         center: LatLng(45.521563, -122.677433),
         radius: 1200,
-        fillColor: MyColor.colorCenter.withOpacity(0.2),
-        strokeColor: MyColor.colorCenter,
+        fillColor: MyColor.pinkColorTheme.withOpacity(0.2),
+        strokeColor: MyColor.pinkColorTheme,
         strokeWidth: 1),
     Circle(
         circleId: CircleId(circleIdMain),
         center: LatLng(45.521563, -122.677433),
         radius: 4000,
-        fillColor: MyColor.colorCenter.withOpacity(0.2),
-        strokeColor: MyColor.colorCenter.withOpacity(0.4),
+        fillColor: MyColor.pinkColorTheme.withOpacity(0.2),
+        strokeColor: MyColor.pinkColorTheme.withOpacity(0.4),
         strokeWidth: 1),
     Circle(
         circleId: CircleId(circleIdMain2),
         center: LatLng(45.521563, -122.677433),
         radius: 200,
-        fillColor: MyColor.colorCenter,
-        strokeColor: MyColor.colorCenter,
+        fillColor: MyColor.pinkColorTheme,
+        strokeColor: MyColor.pinkColorTheme,
         strokeWidth: 1),
   ]);
   final LatLng _center = const LatLng(45.521563, -122.677433);
@@ -58,34 +58,61 @@ class NearByCustomersState extends State<NearByCustomers> {
         children: <Widget>[
           Container(
               color: Colors.white,
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(bottom: 15),
+              height: 60,
+              width:double.infinity ,
+              margin: EdgeInsets.only(top: 25),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+
                 children: <Widget>[
-                  Padding(
-                      padding: EdgeInsets.only(left: 10, top: 15),
-                      child: Image.asset('images/hamber2.png',
-                          width: 25, height: 25)),
-                  Padding(
-                    padding: EdgeInsets.only(top: 15, left: 90),
-                    child: Text(
-                      'Hello! Max',
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: MyColor.textBlueColor,
-                          decoration: TextDecoration.none,
-                          fontFamily: 'GilroySemibold'),
-                    ),
+                  Expanded(
+                    child:  Container(
+                        padding: EdgeInsets.only(left: 0),
+                        child: Image.asset('images/hamber2.png',
+                            width: 20, height: 15)),
+
+                    flex: 1,
+
                   ),
-                  Container(
-                      height: 39,
-                      width: 37,
-                      margin: EdgeInsets.only(left: 90, top: 10),
-                      decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new AssetImage("images/men_dp.png")))),
+                  Expanded(
+                    child: Center(
+                        child: Container(
+                          child: Text(
+                            'Customers',
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: MyColor.textBlueColor,
+                                decoration: TextDecoration.none,
+                                fontFamily: 'GilroySemibold'),
+                          ),
+
+
+
+                        )
+                    ),
+
+                    flex:5,
+
+                  ),
+                  Expanded(
+                    child: Container(
+
+                        height: 34.3,
+                        width: 34.3,
+                        margin: EdgeInsets.only(right: 10),
+                        decoration: new BoxDecoration(
+                            color: Colors.yellow,
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: new AssetImage("images/men_dp.png")))),
+                    flex: 1,
+
+
+                  )
+
+
+
                 ],
               )),
           Expanded(
@@ -134,7 +161,7 @@ class NearByCustomersState extends State<NearByCustomers> {
                                         decoration: new BoxDecoration(
                                             shape: BoxShape.circle,
                                             border: new Border.all(
-                                              color: Colors.red,
+                                              color: MyColor.pinkColorTheme,
                                               width: 2.0,
                                             ),
                                             image: new DecorationImage(

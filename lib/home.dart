@@ -32,8 +32,8 @@ class _MyHomePageState extends State<DriverHomePage> {
         circleId: CircleId(circleIdMain3),
         center: LatLng(45.521563, -122.677433),
         radius: 1200,
-        fillColor: MyColor.colorCenter.withOpacity(0.2),
-        strokeColor: MyColor.colorCenter,
+        fillColor: MyColor.pinkColorTheme.withOpacity(0.2),
+        strokeColor: MyColor.pinkColorTheme,
         strokeWidth: 1
     ),
 
@@ -41,16 +41,16 @@ class _MyHomePageState extends State<DriverHomePage> {
         circleId: CircleId(circleIdMain),
         center: LatLng(45.521563, -122.677433),
         radius: 4000,
-        fillColor: MyColor.colorCenter.withOpacity(0.2),
-        strokeColor: MyColor.colorCenter.withOpacity(0.4),
+        fillColor: MyColor.pinkColorTheme.withOpacity(0.2),
+        strokeColor: MyColor.pinkColorTheme.withOpacity(0.4),
         strokeWidth: 1
     ),
     Circle(
         circleId: CircleId(circleIdMain2),
         center: LatLng(45.521563, -122.677433),
         radius: 200,
-        fillColor: MyColor.colorCenter,
-        strokeColor: MyColor.colorCenter,
+        fillColor: MyColor.pinkColorTheme,
+        strokeColor: MyColor.pinkColorTheme,
         strokeWidth: 1
     ),
   ]);
@@ -72,91 +72,91 @@ class _MyHomePageState extends State<DriverHomePage> {
             // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: <Widget>[
-              Container(
-                height:260.3,
-                child: DrawerHeader(
-                  padding:EdgeInsets.zero,
-                  child:Container(
-                      child:Stack(
-                        children: <Widget>[
-                          Container(
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, CupertinoPageRoute(builder: (context) => ProfileScreen()));
+                },
+                child:Container(
+                  height:260.3,
+                  child: DrawerHeader(
+                    padding:EdgeInsets.zero,
+                    child:Container(
+                        child:Stack(
+                          children: <Widget>[
+                            Container(
 
 
-                            child: Image.asset('images/navigation_curve.png',fit: BoxFit.fill,height: 215,),
+                              child: Image.asset('images/navigation_curve.png',fit: BoxFit.fill,height: 215,),
 
 
 
 
-                          ),
+                            ),
 
-                          Column(
-                            children: <Widget>[
-                           Padding(
-                             padding: EdgeInsets.only(left: 15,top: 20),
-                             child:  Row(
-                               children: <Widget>[
-                                GestureDetector(
-                                  onTap: (){
+                            Column(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.only(left: 15,top: 20),
+                                  child:  Row(
+                                    children: <Widget>[
+                                      Container(
+                                            height: 46.3,
+                                            width: 46.3,
+                                            margin: EdgeInsets.only(top: 10),
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image:
+                                                    new AssetImage("images/men_dp.png")))),
 
-                                    Navigator.push(context, CupertinoPageRoute(builder: (context) => ProfileScreen()));
-                                  },
-                                  child:Container(
-                                      height: 46.3,
-                                      width: 46.3,
-                                      margin: EdgeInsets.only(top: 10),
-                                      decoration: new BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          image: new DecorationImage(
-                                              fit: BoxFit.fill,
-                                              image:
-                                              new AssetImage("images/men_dp.png")))),
 
+
+
+
+                                    ],
+
+
+
+                                  ),
+
+
+
+                                ),
+                                Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.only(left: 15,top: 20),
+                                    child:Text('Max Angelica',style: TextStyle(fontSize: 16,fontFamily: 'GilroySemibold',color: Colors.white),)
+                                ),
+
+                                Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.only(left: 15,top: 7),
+                                    child:Text('D123,Honda city',style: TextStyle(fontSize: 12,fontFamily: 'GilroySemibold',color: Colors.white),)
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 15,top: 5),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Image.asset('images/rating.png', width: 12,
+                                        height: 12,),
+                                      Padding(
+                                          padding: EdgeInsets.only(left: 5,top: 5),
+                                          child:Text('4.5',style: TextStyle(fontSize: 12,fontFamily: 'GilroySemibold',color: Colors.white),)
+                                      ),
+
+
+
+
+
+                                    ],
+
+
+                                  ),
 
 
                                 )
 
-                               ],
-
-
-
-                             ),
-
-
-
-                           ),
-                              Container(
-                                width: double.infinity,
-                                  padding: EdgeInsets.only(left: 15,top: 20),
-                                  child:Text('Max Angelica',style: TextStyle(fontSize: 16,fontFamily: 'GilroySemibold',color: Colors.white),)
-                              ),
-
-                              Container(
-                                  width: double.infinity,
-                                  padding: EdgeInsets.only(left: 15,top: 7),
-                                  child:Text('D123,Honda city',style: TextStyle(fontSize: 12,fontFamily: 'GilroySemibold',color: Colors.white),)
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 15,top: 5),
-                                child: Row(
-                                  children: <Widget>[
-                                    Image.asset('images/rating.png', width: 12,
-                                      height: 12,),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 5,top: 5),
-                                        child:Text('4.5',style: TextStyle(fontSize: 12,fontFamily: 'GilroySemibold',color: Colors.white),)
-                                    ),
-
-
-
-
-
-                                  ],
-
-
-                                ),
-
-
-                              )
 
 
 
@@ -168,30 +168,32 @@ class _MyHomePageState extends State<DriverHomePage> {
 
 
 
+                              ],
 
-                            ],
 
-
-                          ),
-
+                            ),
 
 
 
 
 
 
-                        ],
+
+                          ],
 
 
 
-                      )
+                        )
+
+
+                    ),
+
 
 
                   ),
 
-
-
                 ),
+
 
               ),
               ListTile(
@@ -219,7 +221,7 @@ class _MyHomePageState extends State<DriverHomePage> {
                 ),
                 onTap: () {
 
-                  Navigator.push(context,CupertinoPageRoute(builder: (context) => CarInformationScreen()));
+                  Navigator.of(context).push(_createRouteCarInfo());
 
                   // Update the state of the app.
                   // ...
@@ -254,8 +256,8 @@ class _MyHomePageState extends State<DriverHomePage> {
                 ),
                 onTap: () {
 
-                  Navigator.push(context, CupertinoPageRoute(builder: (context) => HelpScreen()));
-
+                 /// Navigator.push(context, CupertinoPageRoute(builder: (context) => HelpScreen()));
+                  Navigator.of(context).push(_createRoute());
 
                   // Update the state of the app.
                   // ...
@@ -290,7 +292,7 @@ class _MyHomePageState extends State<DriverHomePage> {
                 ),
                 onTap: () {
 
-                  Navigator.push(context, CupertinoPageRoute(builder: (context) =>SettingsScreen()));
+                  Navigator.of(context).push(_createRouteSettings());
 
                   // Update the state of the app.
                   // ...
@@ -360,45 +362,69 @@ class _MyHomePageState extends State<DriverHomePage> {
         child: Column(
           children: <Widget>[
             Container(
-                color: Colors.white,
-                margin: EdgeInsets.only(top: 20),
-                padding: EdgeInsets.only(bottom: 15),
+                height: 60,
+                width:double.infinity ,
+                margin: EdgeInsets.only(top: 25),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+
                   children: <Widget>[
-                   GestureDetector(
-                     onTap: (){
+                    Expanded(
+                      child:  GestureDetector(
+                        onTap: (){
 
-                       Scaffold.of(ctx).openDrawer();
-                     },
-                     child: Padding(
-                         padding: EdgeInsets.only(left: 10, top: 15),
-                         child: Image.asset('images/hamber2.png',
-                             width: 25, height: 25)),
+                          Scaffold.of(ctx).openDrawer();
+                        },
+                        child: Container(
+                            padding: EdgeInsets.only(left: 0),
+                            child: Image.asset('images/hamber2.png',
+                                width: 20, height: 15)),
 
 
-
-                   ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 15, left: 90),
-                      child: Text(
-                        'Hello! Max',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: MyColor.textBlueColor,
-                            decoration: TextDecoration.none,
-                            fontFamily: 'GilroySemibold'),
                       ),
+
+                      flex: 1,
+
                     ),
-                    Container(
-                        height: 39,
-                        width: 37,
-                        margin: EdgeInsets.only(left: 90, top: 10),
-                        decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: new DecorationImage(
-                                fit: BoxFit.fill,
-                                image:
-                                new AssetImage("images/men_dp.png")))),
+                    Expanded(
+                      child: Center(
+                          child: Container(
+                            child: Text(
+                              'Hello! Max',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: MyColor.textBlueColor,
+                                  decoration: TextDecoration.none,
+                                  fontFamily: 'GilroySemibold'),
+                            ),
+
+
+
+                          )
+                      ),
+
+                      flex:5,
+
+                    ),
+                    Expanded(
+                      child: Container(
+
+                          height: 34.3,
+                          width: 34.3,
+                          margin: EdgeInsets.only(right: 10),
+                          decoration: new BoxDecoration(
+                              color: Colors.yellow,
+                              shape: BoxShape.circle,
+                              image: new DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: new AssetImage("images/men_dp.png")))),
+                      flex: 1,
+
+
+                    )
+
+
+
                   ],
                 )),
 
@@ -505,7 +531,7 @@ class _MyHomePageState extends State<DriverHomePage> {
                                         ],
                                       ),
                                       child: Center(
-                                          child: Text('Go',style:TextStyle(fontSize:17,fontFamily: 'GilroySemiBold',decoration: TextDecoration.none)))),
+                                          child: Text('Go',style:TextStyle(fontSize:17,fontFamily: 'GilroySemiBold',decoration: TextDecoration.none,color:MyColor.pinkColorTheme)))),
 
 
                                 ),
@@ -671,6 +697,83 @@ class _MyHomePageState extends State<DriverHomePage> {
     });
 
   }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => HelpScreen(),
+
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          var begin = Offset(0.0, 1.0);
+          var end = Offset.zero;
+          var curve = Curves.ease;
+
+          var tween = Tween(begin: begin, end: end);
+          var curvedAnimation = CurvedAnimation(
+            parent: animation,
+            curve: curve,
+          );
+
+          return SlideTransition(
+            position: tween.animate(curvedAnimation),
+            child: child,
+          );
+        }
+
+
+
+    );
+  }
+
+  Route _createRouteCarInfo() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => CarInformationScreen(),
+
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          var begin = Offset(0.0, 1.0);
+          var end = Offset.zero;
+          var curve = Curves.ease;
+
+          var tween = Tween(begin: begin, end: end);
+          var curvedAnimation = CurvedAnimation(
+            parent: animation,
+            curve: curve,
+          );
+
+          return SlideTransition(
+            position: tween.animate(curvedAnimation),
+            child: child,
+          );
+        }
+
+
+
+    );
+  }
+
+  Route _createRouteSettings() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => SettingsScreen(),
+
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        var begin = Offset(0.0, 1.0);
+        var end = Offset.zero;
+        var tween = Tween(begin: begin, end: end);
+        var offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        );
+      },
+
+
+
+    );
+  }
+
+
+
+
 
 
 

@@ -21,36 +21,61 @@ class CarInfoState extends State<CarInformationScreen>
           child: Column(
             children: <Widget>[
               Container(
-                  color: Colors.white,
-                  margin: EdgeInsets.only(top: 20),
-                  padding: EdgeInsets.only(bottom: 15),
+                  height: 60,
+                  width:double.infinity ,
+                  margin: EdgeInsets.only(top: 25),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+
                     children: <Widget>[
-                      Padding(
-                          padding: EdgeInsets.only(left: 10, top: 15),
-                          child: Image.asset('images/hamber2.png',
-                              width: 25, height: 25)),
-                      Padding(
-                        padding: EdgeInsets.only(top: 15, left: 75),
-                        child: Text(
-                          'Car Information',
-                          style: TextStyle(
-                              fontSize: 18,
-                              color: MyColor.textBlueColor,
-                              decoration: TextDecoration.none,
-                              fontFamily: 'GilroySemibold'),
-                        ),
+                      Expanded(
+                        child:  Container(
+                            padding: EdgeInsets.only(left: 0),
+                            child: Image.asset('images/hamber2.png',
+                                width: 20, height: 15)),
+
+                        flex: 1,
+
                       ),
-                      Container(
-                          height: 39,
-                          width: 37,
-                          margin: EdgeInsets.only(left: 70, top: 10),
-                          decoration: new BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: new DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image:
-                                  new AssetImage("images/men_dp.png")))),
+                      Expanded(
+                        child: Center(
+                            child: Container(
+                              child: Text(
+                                'Car Information',
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    color: MyColor.textBlueColor,
+                                    decoration: TextDecoration.none,
+                                    fontFamily: 'GilroySemibold'),
+                              ),
+
+
+
+                            )
+                        ),
+
+                        flex:5,
+
+                      ),
+                      Expanded(
+                        child: Container(
+
+                            height: 34.3,
+                            width: 34.3,
+                            margin: EdgeInsets.only(right: 10),
+                            decoration: new BoxDecoration(
+                                color: Colors.yellow,
+                                shape: BoxShape.circle,
+                                image: new DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: new AssetImage("images/men_dp.png")))),
+                        flex: 1,
+
+
+                      )
+
+
+
                     ],
                   )),
 
@@ -424,7 +449,7 @@ class CarInfoState extends State<CarInformationScreen>
          padding: EdgeInsets.only(left: 15,right: 15,top: 20),
         child:  DottedBorder(
           color: Colors.black.withOpacity(0.4),
-          strokeWidth: 0.3,
+          strokeWidth: 0.9,
           borderType: BorderType.RRect,
           radius: Radius.circular(8.3),
           padding: EdgeInsets.all(6),
@@ -508,6 +533,7 @@ class CarInfoState extends State<CarInformationScreen>
                    borderRadius: BorderRadius.circular(8.0),
                    child: Image.asset('images/car_black.png',
                     fit: BoxFit.fill,
+                     height: 170,
                    ),
                  ),
 

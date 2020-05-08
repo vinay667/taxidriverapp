@@ -22,18 +22,61 @@ class ProfileState extends State<ProfileScreen>
             Stack(
               children: <Widget>[
                 Container(
-                    color:Colors.white,
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.only(bottom: 15),
+                    height: 60,
+                    width:double.infinity ,
+                    margin: EdgeInsets.only(top: 25),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+
                       children: <Widget>[
-                        GestureDetector(
-                          onTap: () {},
-                          child: Padding(
-                              padding: EdgeInsets.only(left: 10, top: 15),
+                        Expanded(
+                          child:  Container(
+                              padding: EdgeInsets.only(left: 0),
                               child: Image.asset('images/hamber2.png',
-                                  width: 25, height: 25)),
+                                  width: 20, height: 15)),
+
+                          flex: 1,
+
                         ),
+                        Expanded(
+                          child: Center(
+                              child: Container(
+                                child: Text(
+                                  'Profile',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: MyColor.textBlueColor,
+                                      decoration: TextDecoration.none,
+                                      fontFamily: 'GilroySemibold'),
+                                ),
+
+
+
+                              )
+                          ),
+
+                          flex:5,
+
+                        ),
+                        Expanded(
+                          child: Container(
+
+                              height: 34.3,
+                              width: 34.3,
+                              margin: EdgeInsets.only(right: 10),
+                              decoration: new BoxDecoration(
+                                  color: Colors.yellow,
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: new AssetImage("images/men_dp.png")))),
+                          flex: 1,
+
+
+                        )
+
+
+
                       ],
                     )),
 
@@ -45,7 +88,7 @@ class ProfileState extends State<ProfileScreen>
                     children: <Widget>[
                       Image.asset('images/curve_profile_final.png'),
                       Padding(
-                        padding: EdgeInsets.only(top: 38, left: 40),
+                        padding: EdgeInsets.only(top: 45, left: 40),
                         child: Text(
                           'Profile',
                           style: TextStyle(

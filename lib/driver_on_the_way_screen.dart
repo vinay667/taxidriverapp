@@ -36,35 +36,62 @@ class DriverOnTheWayScreenState extends State<DriverOnTheWayScreen> {
       home: Column(
         children: <Widget>[
           Container(
+              height: 60,
               color: Colors.white,
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.only(bottom: 15),
+              width:double.infinity ,
+              margin: EdgeInsets.only(top: 25),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+
                 children: <Widget>[
-                  Padding(
-                      padding: EdgeInsets.only(left: 10, top: 15),
-                      child: Image.asset('images/hamber2.png',
-                          width: 25, height: 25)),
-                  Padding(
-                    padding: EdgeInsets.only(top: 15, left: 90),
-                    child: Text(
-                      'Hello! Max',
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: MyColor.textBlueColor,
-                          decoration: TextDecoration.none,
-                          fontFamily: 'GilroySemibold'),
-                    ),
+                  Expanded(
+                    child:  Container(
+                        padding: EdgeInsets.only(left: 0),
+                        child: Image.asset('images/hamber2.png',
+                            width: 20, height: 15)),
+
+                    flex: 1,
+
                   ),
-                  Container(
-                      height: 39,
-                      width: 37,
-                      margin: EdgeInsets.only(left: 90, top: 10),
-                      decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new AssetImage("images/men_dp.png")))),
+                  Expanded(
+                    child: Center(
+                        child: Container(
+                          child: Text(
+                            'On the way',
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: MyColor.textBlueColor,
+                                decoration: TextDecoration.none,
+                                fontFamily: 'GilroySemibold'),
+                          ),
+
+
+
+                        )
+                    ),
+
+                    flex:5,
+
+                  ),
+                  Expanded(
+                    child: Container(
+
+                        height: 34.3,
+                        width: 34.3,
+                        margin: EdgeInsets.only(right: 10),
+                        decoration: new BoxDecoration(
+                            color: Colors.yellow,
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: new AssetImage("images/men_dp.png")))),
+                    flex: 1,
+
+
+                  )
+
+
+
                 ],
               )),
           Expanded(
@@ -112,7 +139,7 @@ class DriverOnTheWayScreenState extends State<DriverOnTheWayScreen> {
                                             decoration: new BoxDecoration(
                                                 shape: BoxShape.circle,
                                                 border: new Border.all(
-                                                  color: Colors.red,
+                                                  color: MyColor.pinkColorTheme,
                                                   width: 2.0,
                                                 ),
                                                 image: new DecorationImage(
