@@ -24,6 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   google_maps_flutter: ^0.5.27
+  dotted_border: ^1.0.5
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,23 @@ flutter:
     - images/calender_icon.png
     - images/curve_profile.jpeg
     - images/edit.png
+    - images/cross_white.png
+    - images/arrow_top.png
+    - images/invite_cover.png
+    - images/invite_arrow.png
+    - images/curve_profile_final.png
+    - images/ellipse.png
+    - images/nib.png
+    - images/staring.png
+    - images/dl_image.jpg
+    - images/signature.png
+    - images/car_black.png
+    - images/gallery.png
+    - images/dl_icon.png
+    - images/privacy.png
+    - images/right_arrow_3.png
+    - images/map_pointer.png
+    - images/delete_ic.png
   fonts:
       - family: GilroyBold
         fonts:

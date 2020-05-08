@@ -33,4 +33,6 @@ class MyColor {
   static const pinkColorTheme = Color(0xFFff1c74);
   static const greybg = Color(0xFFf6f6f6);
   static const green = Color(0xFF1fdf7e);
+  static const greyLight = Color(0xFFd2d2d2);
+  static const greyDark = Color(0xFF4c4c4c);
 }

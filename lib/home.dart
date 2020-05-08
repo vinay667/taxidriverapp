@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:taxidriverapp/car_information_screen.dart';
 import 'package:taxidriverapp/help_scrreen.dart';
+import 'package:taxidriverapp/invite_friends_screen.dart';
 import 'package:taxidriverapp/profile_screen.dart';
+import 'package:taxidriverapp/settings_screen.dart';
 
 import 'colors.dart';
 import 'earning_details_screen.dart';
@@ -215,6 +218,9 @@ class _MyHomePageState extends State<DriverHomePage> {
                       fontFamily: 'GilroySemibold'),
                 ),
                 onTap: () {
+
+                  Navigator.push(context,CupertinoPageRoute(builder: (context) => CarInformationScreen()));
+
                   // Update the state of the app.
                   // ...
                 },
@@ -265,6 +271,10 @@ class _MyHomePageState extends State<DriverHomePage> {
                       fontFamily: 'GilroySemibold'),
                 ),
                 onTap: () {
+                  Navigator.push(context, CupertinoPageRoute(builder: (context) =>InviteScreen()));
+
+
+
                   // Update the state of the app.
                   // ...
                 },
@@ -279,6 +289,9 @@ class _MyHomePageState extends State<DriverHomePage> {
                       fontFamily: 'GilroySemibold'),
                 ),
                 onTap: () {
+
+                  Navigator.push(context, CupertinoPageRoute(builder: (context) =>SettingsScreen()));
+
                   // Update the state of the app.
                   // ...
                 },

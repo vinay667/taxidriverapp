@@ -6,6 +6,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:taxidriverapp/driver_on_the_way_screen.dart';
 
 import 'colors.dart';
+import 'driver_start_trip_dialog.dart';
 
 class DriverOnTheWayScreen extends StatefulWidget {
   @override
@@ -167,7 +168,18 @@ class DriverOnTheWayScreenState extends State<DriverOnTheWayScreen> {
                                             padding: EdgeInsets.only(left: 80),
                                           ),
 
-                                             Container(
+                                          GestureDetector(
+                                            onTap: (){
+
+                                              showDialog(
+                                                context: context,
+                                                builder: (_) => StartTripDialog(),
+                                              );
+
+
+                                              //custom dialog call
+                                            },
+                                            child:  Container(
                                                 width: 47.3,
                                                 height: 47,
                                                 decoration: new BoxDecoration(
@@ -188,41 +200,37 @@ class DriverOnTheWayScreenState extends State<DriverOnTheWayScreen> {
                                                   ],
                                                 ),
                                                 child: Center(
-                                                   child:Column(
-                                                     children: <Widget>[
+                                                    child:Column(
+                                                      children: <Widget>[
 
-                                                       Padding(
-                                                         padding: EdgeInsets.only(top: 7),
-                                                           child:Text('3.5',style: TextStyle(
-                                                               fontSize: 17,
-                                                               color: Colors.white,
-                                                               decoration: TextDecoration.none,
-                                                               fontFamily: 'GilroySemibold'),)
+                                                        Padding(
+                                                            padding: EdgeInsets.only(top: 7),
+                                                            child:Text('3.5',style: TextStyle(
+                                                                fontSize: 17,
+                                                                color: Colors.white,
+                                                                decoration: TextDecoration.none,
+                                                                fontFamily: 'GilroySemibold'),)
 
-                                                       ),
+                                                        ),
 
-                                                       Text('Km',style: TextStyle(
-                                                           fontSize: 10,
-                                                           color: Colors.white,
-                                                           decoration: TextDecoration.none,
-                                                           fontFamily: 'GilroySemibold'),)
-
-
-
-                                                     ],
+                                                        Text('Km',style: TextStyle(
+                                                            fontSize: 10,
+                                                            color: Colors.white,
+                                                            decoration: TextDecoration.none,
+                                                            fontFamily: 'GilroySemibold'),)
 
 
 
-                                                   )
+                                                      ],
 
 
 
-                                                   )),
+                                                    )
 
 
 
-
-
+                                                )),
+                                          )
                                         ],
                                       ),
 

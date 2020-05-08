@@ -16,13 +16,13 @@ class ProfileState extends State<ProfileScreen>
   Widget build(BuildContext context) {
     return MaterialApp(
       home:  Container(
-        color: MyColor.greybg,
+        color: Colors.white,
         child: ListView(
           children: <Widget>[
             Stack(
               children: <Widget>[
                 Container(
-                    color:MyColor.greybg,
+                    color:Colors.white,
                     margin: EdgeInsets.only(top: 20),
                     padding: EdgeInsets.only(bottom: 15),
                     child: Row(
@@ -43,7 +43,7 @@ class ProfileState extends State<ProfileScreen>
 
                   child:Stack(
                     children: <Widget>[
-                      Image.asset('images/curve_profile.jpeg'),
+                      Image.asset('images/curve_profile_final.png'),
                       Padding(
                         padding: EdgeInsets.only(top: 38, left: 40),
                         child: Text(
@@ -139,11 +139,11 @@ class ProfileState extends State<ProfileScreen>
 
             Container(
               width: double.infinity,
-              padding: EdgeInsets.only(top: 38, left: 17),
+              padding: EdgeInsets.only(top: 25, left: 17),
               child: Text(
                 'Name:',
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: MyColor.textBlueColor,
                     decoration: TextDecoration.none,
                     fontFamily: 'GilroySemibold'),
@@ -181,7 +181,7 @@ class ProfileState extends State<ProfileScreen>
               child: Text(
                 'Phone No:',
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: MyColor.textBlueColor,
                     decoration: TextDecoration.none,
                     fontFamily: 'GilroySemibold'),
@@ -220,7 +220,7 @@ class ProfileState extends State<ProfileScreen>
               child: Text(
                 'Email Id:',
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: MyColor.textBlueColor,
                     decoration: TextDecoration.none,
                     fontFamily: 'GilroySemibold'),
@@ -258,7 +258,7 @@ class ProfileState extends State<ProfileScreen>
               child: Text(
                 'Username:',
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: MyColor.textBlueColor,
                     decoration: TextDecoration.none,
                     fontFamily: 'GilroySemibold'),
