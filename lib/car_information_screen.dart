@@ -83,9 +83,6 @@ class CarInfoState extends State<CarInformationScreen>
                  padding: EdgeInsets.only(top: 3),
                ),
 
-
-
-
               Expanded(
                 child: ListView(
                   padding:EdgeInsets.zero,
