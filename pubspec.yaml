@@ -84,6 +84,7 @@ flutter:
     - images/right_arrow_3.png
     - images/map_pointer.png
     - images/delete_ic.png
+    - images/back_icon.png
   fonts:
       - family: GilroyBold
         fonts:

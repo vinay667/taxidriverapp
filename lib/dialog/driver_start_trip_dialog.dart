@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:taxidriverapp/colors.dart';
+import 'package:taxidriverapp/colors/colors.dart';
 
 class StartTripDialog extends StatefulWidget {
   @override
@@ -130,9 +130,11 @@ class StartTripDialogState extends State<StartTripDialog>
                               height: 12.3,
                             )),
                         Padding(
-                          padding: EdgeInsets.only(top: 10),
+                          padding: EdgeInsets.only(top: 10,left: 10,right: 10),
                           child: Text(
                             'CG3-1606, Logix City Center,Sector 38, Noida',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                                 fontSize: 10,
                                 color: MyColor.textSoft,

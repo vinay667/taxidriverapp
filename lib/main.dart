@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'colors.dart';
-import 'home.dart';
+import 'colors/colors.dart';
+import 'screens/home.dart';
 
 void main(){
   runApp( MyApp()
