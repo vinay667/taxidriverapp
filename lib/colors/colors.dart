@@ -35,4 +35,6 @@ class MyColor {
   static const green = Color(0xFF1fdf7e);
   static const greyLight = Color(0xFFd2d2d2);
   static const greyDark = Color(0xFF4c4c4c);
+  static const blueMap = Color.fromRGBO(19,20,87,1);
+  static const greyMap = Color.fromRGBO(34,34,34,0.7);
 }

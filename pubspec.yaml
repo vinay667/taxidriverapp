@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_maps_flutter: ^0.5.27
   dotted_border: ^1.0.5
+  maps_curved_line: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,7 @@ flutter:
     - images/home_pink.png
     - images/loc_white.png
     - images/office_pink.png
+    - images/car_icon_map.png
     - assets/map_style.txt
     - images/car_icon.png
     - images/search_icon.png
@@ -85,6 +87,7 @@ flutter:
     - images/map_pointer.png
     - images/delete_ic.png
     - images/back_icon.png
+    - images/cust2.png
   fonts:
       - family: GilroyBold
         fonts:

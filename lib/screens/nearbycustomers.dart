@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -5,6 +7,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/services.dart'
     show SystemChrome, SystemUiOverlayStyle, rootBundle;
 import 'package:taxidriverapp/screens/driver_on_the_way_screen.dart';
+import 'package:taxidriverapp/widgets/custom_marker_widget.dart';
 import 'package:taxidriverapp/widgets/custom_toolbar.dart';
 import '../colors/colors.dart';
 
@@ -45,7 +48,8 @@ class NearByCustomersState extends State<NearByCustomers> {
         strokeWidth: 1),
   ]);
   final LatLng _center = const LatLng(45.521563, -122.677433);
-
+  List<Marker> markersWidget = [];
+  List<Customers> customerImages=[Customers('images/cust2.png',LatLng(45.5156, -122.7157),Colors.white),Customers('images/girl_dp.jpg',LatLng(45.5211, -122.6272),MyColor.pinkColorTheme),Customers('images/cust2.png',LatLng(45.4724, -122.6627),Colors.white)];
   @override
   Widget build(BuildContext context) {
     BitmapDescriptor.fromAssetImage(
@@ -53,6 +57,15 @@ class NearByCustomersState extends State<NearByCustomers> {
         .then((onValue) {
       pinLocationIcon = onValue;
     });
+
+    MarkerGenerator(getAllMarkerWidgets(), (bitmaps) {
+      setState(() {
+        markersWidget = mapBitmapsToMarker(bitmaps);
+      });
+    }).generate(context);
+
+
+
     return Scaffold(
         body: SafeArea(
       child: Column(
@@ -101,7 +114,7 @@ class NearByCustomersState extends State<NearByCustomers> {
                                         transform: Matrix4.translationValues(
                                             0.0, -15.0, 0.0),
                                         height: 39,
-                                        width: 37,
+                                        width: 39,
                                         decoration: new BoxDecoration(
                                             shape: BoxShape.circle,
                                             border: new Border.all(
@@ -201,6 +214,10 @@ class NearByCustomersState extends State<NearByCustomers> {
                                                     height: 12.3,
                                                     width: 18.3,
                                                   ))),
+
+
+
+
                                             )),
                                       ))
                                     ],
@@ -356,14 +373,6 @@ class NearByCustomersState extends State<NearByCustomers> {
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
     mapController.setMapStyle(_mapStyle);
-    setState(() {
-      markers.addAll([
-        Marker(
-            markerId: MarkerId('value'),
-            position: LatLng(45.521563, -122.677433),
-            icon: pinLocationIcon),
-      ]);
-    });
   }
 
   @override
@@ -374,4 +383,59 @@ class NearByCustomersState extends State<NearByCustomers> {
       _mapStyle = string;
     });
   }
+
+
+
+  Widget _getMarkerWidget(String imagePath,Color borderColor) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+      child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+          height: 39,
+          width: 39,
+          decoration: new BoxDecoration(
+              shape: BoxShape.circle,
+              border: new Border.all(
+                color: borderColor,
+                width: 2.0,
+              ),
+              image: new DecorationImage(
+                  fit: BoxFit.fill,
+                  image: new AssetImage(
+                      imagePath)))),
+    );
+  }
+
+
+
+  List<Marker> mapBitmapsToMarker(List<Uint8List> bitmaps) {
+    List<Marker> markersList = [];
+    bitmaps.asMap().forEach((i, bmp) {
+      final customer = customerImages[i];
+      markers.add(Marker(
+          markerId: MarkerId(customer.imagePath+i.toString()),
+          position: customer.position,
+          icon: BitmapDescriptor.fromBytes(bmp)));
+    });
+    markers.addAll([
+      Marker(
+          markerId: MarkerId('value'),
+          position: LatLng(45.521563, -122.677433),
+          icon: pinLocationIcon),
+    ]);
+    return markersList;
+  }
+
+
+List<Widget> getAllMarkerWidgets()
+{
+  return customerImages.map((c)=>_getMarkerWidget(c.imagePath,c.borderColor)).toList();
+}
+
+}
+class Customers {
+  final String imagePath;
+  final LatLng position;
+  final Color borderColor;
+  Customers(this.imagePath, this.position,this.borderColor);
 }
